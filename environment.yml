@@ -1,0 +1,7 @@
+name: bbb
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - rdkit
+prefix: C:\Users\gigar\miniforge3\envs\bbb

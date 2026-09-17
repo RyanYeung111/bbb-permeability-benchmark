@@ -1,0 +1,49 @@
+anyio==4.14.2
+certifi==2026.7.22
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1786835581063/work
+click==8.5.0
+cloudpickle==3.1.2
+colorama==0.4.6
+contourpy @ file:///D:/bld/bld/rattler-build_contourpy_1769155974/work
+cycler @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_cycler_1764466758/work
+filelock==3.32.5
+fonttools @ file:///D:/bld/fonttools_1778770294641/work
+freetype-py @ file:///home/conda/feedstock_root/build_artifacts/freetype-py_1650983368720/work
+fsspec==2026.7.0
+fuzzywuzzy==0.18.0
+greenlet @ file:///D:/bld/bld/rattler-build_greenlet_1786384102/work
+h11==0.16.0
+hf-xet==1.6.0
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub==1.29.0
+idna==3.19
+joblib==1.6.0
+kiwisolver @ file:///D:/bld/bld/rattler-build_kiwisolver_1788505710/work
+matplotlib==3.11.1
+munkres==1.1.4
+narwhals==2.25.0
+numpy @ file:///D:/bld/bld/rattler-build_numpy_1779169235/work/dist/numpy-2.4.6-cp311-cp311-win_amd64.whl#sha256=1f5fa3c853dd01b13cacc0fd3cfdc827bb2f4cf73638f3949fcee463a6dc8304
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1785888127/work
+pandas @ file:///D:/bld/bld/rattler-build_pandas_1785276282/work
+pillow @ file:///D:/bld/bld/rattler-build_pillow_1788610331/work
+pycairo==1.29.1
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pyparsing_1769003998/work
+PyTDC==0.4.1
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
+PyYAML==6.0.3
+rdkit @ file:///D:/bld/rdkit-meta_1788615538290/work
+reportlab @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_reportlab_1787251752/work
+requests==2.34.2
+rlPyCairo @ file:///home/conda/feedstock_root/build_artifacts/rlpycairo_1756864152814/work
+scikit-learn==1.9.0
+scipy==1.17.1
+seaborn==0.13.2
+six @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_six_1753199211/work
+SQLAlchemy @ file:///D:/bld/bld/rattler-build_sqlalchemy_1786535219/work
+threadpoolctl==3.6.0
+tqdm==4.70.0
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1783002732/work
+tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1783704735836/work
+unicodedata2 @ file:///D:/bld/unicodedata2_1788554084545/work
+urllib3==2.7.0

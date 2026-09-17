@@ -1,0 +1,5 @@
+seed,Drug_ID,smiles,y_true,rf_prob,lr_prob,max_sim,nearest_train_id,nearest_train_smiles,rf_correct,lr_correct
+2,trihexyphenidyl,OC(CCN1CCCCC1)(c1ccccc1)C1CCCCC1,1,0.9470000000000001,0.798228370173382,1.0,procyclidine,OC(CCN1CCCC1)(c1ccccc1)C1CCCCC1,True,True
+3,Cyclopropane,C1CC1,1,0.988,0.8946249985782267,1.0,Cyclohexane,C1CCCCC1,True,True
+4,procyclidine,OC(CCN1CCCC1)(c1ccccc1)C1CCCCC1,1,0.9663999999999999,0.7902618029494792,1.0,trihexyphenidyl,OC(CCN1CCCCC1)(c1ccccc1)C1CCCCC1,True,True
+5,Cyclohexane,C1CCCCC1,1,0.976,0.8733944661297076,1.0,Cyclopropane,C1CC1,True,True
