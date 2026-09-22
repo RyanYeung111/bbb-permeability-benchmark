@@ -2,6 +2,19 @@ name: bbb
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
-  - rdkit
-prefix: C:\Users\gigar\miniforge3\envs\bbb
+  - python=3.11.16
+  - rdkit=2026.03.6
+  - pandas=3.0.5
+  - numpy=2.4.6
+  - matplotlib=3.11.1
+  - scikit-learn=1.9.0
+  - scipy=1.17.1
+  - setuptools<81
+  - pip
+  - pip:
+    - PyTDC==0.4.1
+    - fuzzywuzzy==0.18.0
+    - tqdm==4.70.0
+    - seaborn==0.13.2
+    - requests==2.34.2
+    - huggingface_hub==1.29.0
