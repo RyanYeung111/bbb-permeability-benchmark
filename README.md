@@ -34,3 +34,19 @@ dependency notes.
 - [bbb_step1.py](bbb_step1.py) — data loading, scaffold split, fingerprint
   featurization, and baseline random forest training/evaluation.
 - `data/` — local dataset cache (not tracked in git).
+
+## Reproducing
+ 
+```bash
+conda env create -f environment.yml
+conda activate bbb
+```
+ 
+If the pip step fails on PyTDC, install it separately — later versions of its dependency tree include a package with no Windows distribution:
+ 
+```bash
+pip install PyTDC==0.4.1 --no-deps
+pip install fuzzywuzzy tqdm seaborn requests huggingface_hub
+```
+ 
+On Windows 11 with Smart App Control enabled, pip-installed packages with compiled extensions may be blocked at import. Installing them from conda-forge resolves this.
