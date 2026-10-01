@@ -1,23 +1,18 @@
 # Blood-Brain Barrier Permeability: A Re-evaluation of the BBB_Martins Benchmark
 
-Independent computational project examining what a single headline AUROC
-conceals about representation, chemical novelty and label quality on a
-standard ADMET benchmark.
+An independent computational project investigating how a single headline AUROC can obscure differences in molecular representation, chemical novelty, and label quality within a standard ADMET benchmark.
 
 **Full report:** [report.pdf](report.pdf)
 
 ## Findings
 
-**1. Fingerprints beat four textbook descriptors, but not by much.**
-A 2,048-bit Morgan fingerprint random forest reached AUROC 0.903 (SD 0.026).
-Logistic regression on molecular weight, logP, TPSA and hydrogen-bond donor
-count reached 0.850 (SD 0.035). Mean paired difference +0.053
-(95% CI 0.038–0.068, p < 0.0001, n = 20 scaffold splits). The four-descriptor
-model recovers roughly 87% of the fingerprint model's improvement over chance.
+1. Fingerprints improved performance, but the simpler model came surprisingly close.
 
-**2. Performance depends heavily on how novel the test chemistry is.**
-Pooling 8,120 predictions and stratifying by maximum Tanimoto similarity to
-the training set:
+A random forest using 2,048-bit Morgan fingerprints achieved an AUROC of 0.903 (SD 0.026), compared with 0.850 (SD 0.035) for logistic regression using just four standard molecular descriptors: molecular weight, logP, TPSA and hydrogen-bond donor count. Across 20 scaffold splits, the mean difference was 0.053 (95% CI 0.038–0.068, p < 0.0001). Despite using a much simpler representation, the four-descriptor model captured roughly 87% of the fingerprint model's improvement over chance.
+
+2. Model performance varied substantially with the chemical novelty of the test compounds.
+
+To investigate how well the model generalised to unfamiliar chemistry, 8,120 predictions were pooled and grouped according to each compound's maximum Tanimoto similarity to the training set.
 
 | Quartile | Similarity | AUROC | 95% CI |
 | --- | --- | --- | --- |
