@@ -21,16 +21,15 @@ To investigate how well the model generalised to unfamiliar chemistry, 8,120 pre
 | | 0.45–0.60 | 0.924 | 0.907–0.939 |
 | Most similar | 0.60–1.00 | 0.965 | 0.955–0.974 |
 
-Monotonic, non-overlapping intervals, spanning 0.192 AUROC. Not explained by
-class balance — the best-performing quartile had the *lowest* positive
-prevalence. A headline figure near 0.90 is an average across this range.
+AUROC increased steadily across the four quartiles, with no overlap between their confidence intervals. The difference between the least and most similar groups was 0.192.
 
-**3. About 1% of labels contradict themselves, for two different reasons.**
-Ten structures carry both labels. Six are curation artefacts (`Miconazole`
-and `miconazole` filed as separate entries with opposite labels). The rest
-reflect pharmacology a binary label cannot express: loperamide crosses the
-endothelium but is effluxed by P-glycoprotein; levodopa is too polar for
-passive diffusion but enters via LAT1 carrier-mediated transport.
+This pattern was not explained by class balance. In fact, the quartile with the highest AUROC had the lowest proportion of positive labels. A headline AUROC of around 0.90 therefore hides quite a wide variation in performance, depending on how familiar the test chemistry is.
+
+3. Around 1% of the labels are contradictory, for two different reasons.
+
+Ten structures appear with both positive and negative labels. In six cases, the issue appears to be a curation artefact. For example, Miconazole and miconazole were recorded as separate entries with opposite labels.
+
+The remaining cases are less straightforward. Some reflect pharmacological behaviour that a binary label cannot fully capture. Loperamide can cross the endothelium but is subsequently effluxed by P-glycoprotein. Levodopa, meanwhile, is too polar for passive diffusion but can enter the brain through LAT1-mediated transport.
 
 ![AUROC by similarity quartile](fig_similarity_quartiles.png)
 
@@ -47,8 +46,7 @@ python bbb_step4.py
 
 Runs on CPU. Total runtime under 30 minutes on a consumer laptop.
 
-If the pip step fails on PyTDC, install it separately — later versions of its
-dependency tree include a package with no Windows distribution:
+If the pip installation fails on PyTDC, try installing it separately. Later versions of its dependency tree include a package without a Windows distribution:
 
 ```bash
 pip install PyTDC==0.4.1 --no-deps
@@ -95,13 +93,9 @@ conda-forge resolves this.
 
 ## Known limitations
 
-Single dataset and endpoint, no external validation. Similarity is measured
-with the same fingerprint the model consumes, and that measure saturates —
-cyclopropane and cyclohexane return a Tanimoto of 1.000 because radius-2
-environments cannot resolve ring size. The four descriptors are collinear
-(TPSA VIF 10.09), so individual coefficients are not independently
-interpretable. Duplicates were identified by exact SMILES match without
-structure standardisation, which underestimates their true number.
+The analysis covers only one dataset and endpoint, with no external validation. Similarity was measured using the same fingerprint representation supplied to the random forest, so the results depend partly on that choice. The measure also has limitations of its own. For example, cyclopropane and cyclohexane receive a Tanimoto similarity of 1.000 because radius-2 environments cannot distinguish their ring sizes.
+
+The four molecular descriptors are also correlated, with TPSA having a VIF of 10.09. This makes individual model coefficients difficult to interpret independently. Finally, duplicates were identified using exact SMILES matching without structure standardisation, meaning the analysis likely underestimates their actual number.
 
 ## Data
 
